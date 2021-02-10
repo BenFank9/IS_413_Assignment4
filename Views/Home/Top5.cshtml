@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Provo Restaurants";
+    ViewBag.h1 = "My Top 5 Restaurants";
+}
+
+@*bring in the list and print it out in a table format*@
+
+@model IEnumerable<string>
+
+
+
+@*Make a table for the prepopulated list entered*@
+<div class="container">
+    <table id="customers">
+        <thead>
+            <tr>
+                <th>Provo Restaurants</th>
+            </tr>
+        </thead>
+
+        @*Use razor code to make bring in the new movies from the model.
+            Also use a foreach to loop through all of the restaurants in the list and print them in a table*@
+        <tbody>
+            @foreach (string r in Model)
+            {
+                <tr>
+                    <td>@r</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

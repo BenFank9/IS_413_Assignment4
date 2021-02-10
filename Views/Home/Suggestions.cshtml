@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Provo Restaurants";
+    ViewBag.h1 = "Your Suggestions!";
+}
+
+@model IEnumerable<IS_413_Assignment4.Models.UserSuggestions>
+
+@*Make a table for the list of movies entered*@
+<div class="container">
+    <table id="customers">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Restaurant</th>
+                <th>Favorite Dish</th>
+                <th>Restaurant Phone</th>
+            </tr>
+        </thead>
+
+        @*Use razor code to make bring in the new movies from the model.
+            Also use a foreach to loop through all of the movies added to print them out*@
+        <tbody>
+            @foreach (IS_413_Assignment4.Models.UserSuggestions x in Model)
+            {
+                <tr>
+                    <td>@x.Name</td>
+                    <td>@x.RestaurantName</td>
+                    <td>@x.FavoriteDish</td>
+                    <td>@x.PhoneNumber</td>
+                   
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
