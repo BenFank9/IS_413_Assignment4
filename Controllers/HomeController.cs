@@ -26,10 +26,16 @@ namespace IS_413_Assignment4.Controllers
             //declaration of the variable and instantiation of the variable
             //list is just a container that can hold objects
             List<string> RestaurantList = new List<string>();
-
+            
+            //for each restaurant that is returned from the getprovorestaurants method.
             foreach(ProvoRestaurants r in ProvoRestaurants.GetProvoRestaurants())
             {
                 RestaurantList.Add($"#{r.Rank}: {r.RestaurantName} Fav Dish: {r.FavoriteDish} Location: {r.Address} Phone: {r.PhoneNumber} Website: {r.WebsiteLink}");
+
+                //different string formats
+                //$ means string interpelation
+                //do Add(string.Format("#{0}: {1}", r.Rank, r.RestaurantName));
+                //do Add("#" + r.Rank + ": " + r.RestaurantName)
             }
 
             return View(RestaurantList);

@@ -17,21 +17,23 @@ namespace IS_413_Assignment4.Models
         public int Rank { get; }
 
         public string RestaurantName { get; set; }
-#nullable enable
-        public string? FavoriteDish { get; set; } = "It's all Tasty!";
-#nullable disable
+        #nullable enable
+        public string? FavoriteDish { get; set; } = "It's all Tasty!"; //this is a property initializer
+        #nullable disable
         public string Address { get; set; }
 
-#nullable enable        
+        #nullable enable        
         [DataType(DataType.PhoneNumber)]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{4})$", ErrorMessage = "You must enter a valid phone number ###-###-####")]
         public string? PhoneNumber { get; set; } = "None";
-#nullable disable
-#nullable enable
+        #nullable disable   
+        #nullable enable
         public string? WebsiteLink { get; set; } = "Coming Soon";
-#nullable disable
+        #nullable disable
 
         //the thing were going to do applies to the class as a whole
+        //method that allows exterior class to access the restaurant data.
+        //create the restaurants here but when we pull from a database we wont have this.
         public static ProvoRestaurants[] GetProvoRestaurants()
         {
             ProvoRestaurants r1 = new ProvoRestaurants(1)
